@@ -162,10 +162,10 @@
     <!-- ======= reps Section ======= -->
     <section id="reps" class="section d-flex about flex-column justify-content-center">
         <div class="container" data-aos="zoom-in" data-aos-delay="100">
-            <h1 class="mb-4">House of Reps Candidates</h1>
+            <h1 class="mb-4">House of Representatives Candidates</h1>
             <div class="row my-5" style="margin-right: 80px;">
                 <div class="card shadow mb-5 px-4">
-                    <h5 class="card-title"><i class="bi bi-filter"></i> Filter Senatorial list</h5>
+                    <h5 class="card-title"><i class="bi bi-filter"></i> Filter House of Reps list</h5>
                     <small class="mb-4">Search for a Senatorial Candidate, Filter by any of the following parameters; Candidate's Name, State, Political Party, or Contituency.</small>
                     <div class="row pb-4">
                         <div class="form-group col-md-3 mb-4">
