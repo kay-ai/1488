@@ -1,0 +1,152 @@
+.fine-scrollbar::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+.fine-scrollbar::-webkit-scrollbar-track {
+    background-color: white;
+    border-radius: 10px;
+}
+
+/* Handle */
+.fine-scrollbar::-webkit-scrollbar-thumb {
+    background: gray;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+.fine-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgb(84, 84, 84);
+}
+
+.party-card{
+    display: flex;
+    justify-content: center;
+    height: max-content;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    background-color: #ffffff63 !important;
+}
+
+.party-card .item{
+    height: 150px;
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.party-card .item .logo{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    overflow: hidden;
+    scale: 1;
+    transition: all 0.5s;
+}
+
+.party-card .item .logo:hover{
+    scale: 1.2;
+}
+
+.party-card .party-text{
+    position: absolute;
+}
+
+#senate{
+    background: url("../img/about-bg.jpg") top right no-repeat;
+    background-size: cover;
+}
+
+.section{
+    min-height: 100vh;
+    position: relative;
+    padding-left: 160px;
+}
+
+.section:before {
+    content: "";
+    background: #ffffffe6;
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.section h1 {
+    margin: 0;
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 56px;
+    color: #45505b;
+}
+
+.section p {
+    color: #45505b;
+    margin: 15px 0 0 0;
+    font-size: 26px;
+    font-family: "Poppins", sans-serif;
+}
+
+.section p span {
+    color: #0563bb;
+    letter-spacing: 1px;
+}
+
+.party-carousel .item{
+    height: 150px;
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.party-carousel .item .logo{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    overflow: hidden;
+    scale: 1;
+    transition: all 0.5s;
+}
+
+.party-carousel .item .logo:hover{
+    scale: 1.2;
+}
+
+.owl-dots{
+    display: none !important;
+}
+
+.datatable{
+    font-family: "Raleway", sans-serif;
+}
+
+.card-title{
+    padding-top: 15px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #0563bb;
+    font-family: "Poppins", sans-serif;
+}
+
+.datatable .logo{
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.btn-primary{
+    background-color: #0563bb !important;
+    border-color: #0563bb !important;
+}
+
+.btn-primary:hover{
+    background-color: #03437f !important;
+    border-color: #03437f !important;
+}
