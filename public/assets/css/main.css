@@ -150,3 +150,54 @@
     background-color: #03437f !important;
     border-color: #03437f !important;
 }
+
+.card-row{
+    margin-right: 80px;
+}
+
+.site-details{
+    position: absolute;
+    top: 10%;
+    margin: 0 15px;
+    width: 75%;
+}
+
+.site-details h1{
+    font-size: 45px !important;
+}
+
+.site-details h5{
+    font-size: 16px;
+}
+
+@media screen and (max-width: 768px) {
+    .card-row{
+        margin-right: 0px;
+        margin-left: 2px;
+    }
+
+    .party-card .item{
+        height: 70px;
+        width: 70px;
+    }
+
+    .party-card .item .logo{
+        height: 50px;
+        width: 50px;
+    }
+
+    #hero h1, .section h1 {
+        font-size: 25px;
+        line-height: unset;
+    }
+
+    .section{
+        padding-left: unset;
+    }
+
+    .site-details{
+        width: unset;
+        text-align: center;
+    }
+}
+

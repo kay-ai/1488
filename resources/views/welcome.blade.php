@@ -65,9 +65,14 @@
 
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex flex-column justify-content-center">
+    <div class="site-details">
+       <h1>1488</h1>
+       <h5>A Searchable database of all aspirants for the 2023 General Elections</h5>
+    </div>
     <div class="container" data-aos="zoom-in" data-aos-delay="100">
+
       <h1 class="mb-4">Presidential Candidates</h1>
-      <div class="row my-5" style="margin-right: 80px;">
+      <div class="row my-lg-5 card-row">
         <div class="col-md-12">
             <div class="card shadow party-card">
                 <div class="item">
@@ -124,7 +129,7 @@
     <section id="senate" class="section d-flex about flex-column justify-content-center">
         <div class="container" data-aos="zoom-in" data-aos-delay="100">
             <h1 class="mb-4">Senatorial Candidates</h1>
-            <div class="row my-5" style="margin-right: 80px;">
+            <div class="row my-5 card-row">
                 <div class="card shadow px-4">
                     <h5 class="card-title"><i class="bi bi-filter"></i> Filter Senatorial list</h5>
                     <small class="mb-4">Search for a Senatorial Candidate, Filter by any of the following parameters; Candidate's Name, State, Political Party, or Contituency.</small>
@@ -163,7 +168,7 @@
     <section id="reps" class="section d-flex about flex-column justify-content-center">
         <div class="container" data-aos="zoom-in" data-aos-delay="100">
             <h1 class="mb-4">House of Representatives Candidates</h1>
-            <div class="row my-5" style="margin-right: 80px;">
+            <div class="row card-row my-5">
                 <div class="card shadow mb-5 px-4">
                     <h5 class="card-title"><i class="bi bi-filter"></i> Filter House of Reps list</h5>
                     <small class="mb-4">Search for a Senatorial Candidate, Filter by any of the following parameters; Candidate's Name, State, Political Party, or Contituency.</small>
@@ -190,6 +195,18 @@
                         </div>
                         <div class="col-md-12">
                             <button type="submit" class="btn btn-primary">Search <i class="bi bi-filter"></i></button>
+                        </div>
+
+                        <div class="row mt-5 d-none">
+                            <form action="/upload-csv" enctype="multipart/form-data" method="post">
+                                @csrf
+                                <div class="col-md-6">
+                                    <input type="file" name="csv_file" class="form-control">
+                                </div>
+                                <div class="col-md-6 mt-2">
+                                    <button type="submit" class="btn btn-primary">Submit <i class="bi bi-filter"></i></button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>

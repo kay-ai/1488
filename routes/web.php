@@ -24,3 +24,5 @@ Route::get('/portfolio', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::post('/upload-csv', [App\Http\Controllers\CandidateController::class, 'uploadCSV'])->name('uploadCSV');
