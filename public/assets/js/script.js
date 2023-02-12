@@ -1,28 +1,31 @@
 $(document).ready(function(){
-    function getSuggestion(id, url){
+    function getSuggestion(id, office, column){
         $(id).select2({
         maximumSelectionLength: 1,
         ajax: {
-        url: url,
+        url: "/get-suggestions",
         type: "POST",
         dataType: 'json',
         headers:{
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         },
-        delay: 250,
+        delay: 350,
         data: function (params) {
             return {
-            query: params.term,
+                query: params.term,
+                office: office,
+                column: column,
             };
         },
         processResults: function (data) {
+
             return {
-            results: $.map(data, function (item) {
-                return {
-                text: item.username,
-                id: item.username
-                }
-            })
+                results: $.map(data, function (item) {
+                    return {
+                        text: item[column],
+                        id: item['MIN(id)']
+                    }
+                })
             };
         },
         cache: true
@@ -31,48 +34,38 @@ $(document).ready(function(){
     }
 
     function populateFields(id){
-        $(id).on('change', function() {
-            var selectedData = $(id).select2('data')[0]['id'];
+        $('#'+id).on('change', function() {
+            var selectedData = $('#'+id).select2('data')[0]['text'];
+            var new_id = '#real_'+id;
 
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
-            $.ajax({
-                url: "/get-user/",
-                type: "POST",
-                data: { username: selectedData },
-                success: function(result) {
-                    console.log(result);
-                    $("#staff_email").val(result.email);
-                    $("#staff_staff_id").val(result.staff_id);
-                },
-            });
+            console.log(selectedData);
+            console.log(new_id);
+
+            $(new_id).val(selectedData);
         });
     }
 
-    getSuggestion('#senate_name', '/get-suggestions');
-    populateFields('#senate_name');
+    getSuggestion('#senate_name', 'senate', 'name');
+    populateFields('senate_name');
 
-    getSuggestion('#senate_state', '/get-suggestions');
-    populateFields('#senate_state');
+    getSuggestion('#senate_state', 'senate', 'state');
+    populateFields('senate_state');
 
-    getSuggestion('#senate_party', '/get-suggestions');
-    populateFields('#senate_party');
+    getSuggestion('#senate_party', 'senate', 'party');
+    populateFields('senate_party');
 
-    getSuggestion('#senate_constituency', '/get-suggestions');
-    populateFields('#senate_constituency');
+    getSuggestion('#senate_constituency', 'senate', 'constituency');
+    populateFields('senate_constituency');
 
-    getSuggestion('#hor_name', '/get-suggestions');
-    populateFields('#hor_name');
+    getSuggestion('#reps_name', 'reps', 'name');
+    populateFields('reps_name');
 
-    getSuggestion('#hor_state', '/get-suggestions');
-    populateFields('#hor_state');
+    getSuggestion('#reps_state', 'reps', 'state');
+    populateFields('reps_state');
 
-    getSuggestion('#hor_party', '/get-suggestions');
-    populateFields('#hor_party');
+    getSuggestion('#reps_party', 'reps', 'party');
+    populateFields('reps_party');
 
-    getSuggestion('#hor_constituency', '/get-suggestions');
-    populateFields('#hor_constituency');
+    getSuggestion('#reps_constituency', 'reps', 'constituency');
+    populateFields('reps_constituency');
 });

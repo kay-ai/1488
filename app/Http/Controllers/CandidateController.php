@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Candidate;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -44,6 +45,57 @@ class CandidateController extends Controller
         } else {
             return redirect()->back()->with('error', 'File not uploaded properly');
         }
+    }
+
+
+    public function getSuggestions(Request $request)
+    {
+        $query = $request->get('query');
+        $office = $request->get('office');
+        $column = $request->get('column');
+
+        $suggestions = Candidate::where($column, 'LIKE', "%$query%")
+        ->where('office', $office)
+        ->select(DB::raw('MIN(id)'), $column)
+        ->groupBy($column)
+        ->get('id', $column);
+
+        return response()->json($suggestions);
+    }
+
+    public function getCandidate(Request $request)
+    {
+        $candidate = Candidate::where('name', $request->name)->first();
+
+        return response()->json($candidate);
+    }
+
+    public function showCandidate(Request $request){
+        // dd($request->all());
+
+        $query = Candidate::query();
+
+        if ($request->name != null) {
+            $query->where('name', 'LIKE', "%{$request->name}%");
+        }
+
+        if ($request->state != null) {
+            $query->where('state', 'LIKE', "%{$request->state}%");
+        }
+
+        if ($request->party != null) {
+            $query->where('party', 'LIKE', "%{$request->party}%");
+        }
+
+        if ($request->consti != null) {
+            $query->where('constituency', 'LIKE', "%{$request->consti}%");
+        }
+
+        $query->where('office', $request->office);
+
+        $results = $query->get();
+
+        return view('show-candidate', compact('results'));
     }
 
 }
