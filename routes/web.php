@@ -29,5 +29,6 @@ Route::post('/upload-csv', [App\Http\Controllers\CandidateController::class, 'up
 
 Route::post('/get-suggestions', [App\Http\Controllers\CandidateController::class, 'getSuggestions'])->name('getSuggestions');
 Route::post('/get-candidate', [App\Http\Controllers\CandidateController::class, 'getCandidate'])->name('getCandidate');
+Route::post('/get-president', [App\Http\Controllers\CandidateController::class, 'getPresident'])->name('getPresident');
 Route::post('/show-candidate', [App\Http\Controllers\CandidateController::class, 'showCandidate'])->name('showCandidate');
 

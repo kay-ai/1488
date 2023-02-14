@@ -19,6 +19,8 @@
 @endsection
 
 @section('content')
+  @include('includes.messages')
+  @include('includes.show-president')
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex flex-column justify-content-center">
     <div class="site-details">
@@ -32,46 +34,114 @@
         <div class="col-md-12">
             <div class="card shadow party-card">
                 <div class="item">
-                    <a href="">
+                    <span class="party-name">Accord Party</span>
+                    <a href="javascript:void(0);" onclick="showPresident('A', 'Accord Party')">
+                        <img src="/assets/img/a-logo.jpg" class="logo">
+                    </a>
+                </div>
+                <div class="item">
+                    <span class="party-name">Action Alliance</span>
+                    <a href="javascript:void(0);" onclick="showPresident('AA', 'Action Alliance')">
+                        <img src="/assets/img/aa-logo.jpg" class="logo">
+                    </a>
+                </div>
+                <div class="item">
+                    <span class="party-name">African Action Congress</span>
+                    <a href="javascript:void(0);" onclick="showPresident('AAC', 'African Action Congress')">
+                        <img src="/assets/img/aac-logo.jpeg" class="logo">
+                    </a>
+                </div>
+                <div class="item">
+                    <span class="party-name">Action Democratic Party</span>
+                    <a href="javascript:void(0);" onclick="showPresident('ADP', 'Action Democratic Party')">
+                        <img src="/assets/img/adp-logo.jpg" class="logo">
+                    </a>
+                </div>
+                <div class="item">
+                    <span class="party-name">African Democratic Congress</span>
+                    <a href="javascript:void(0);" onclick="showPresident('ADC', 'African Democratic Congress')">
+                        <img src="/assets/img/adc-logo.jpeg" class="logo">
+                    </a>
+                </div>
+
+                <div class="item">
+                    <span class="party-name">All Progressives Congress</span>
+                    <a href="javascript:void(0);" onclick="showPresident('APC', 'All Progressives Congress')">
                         <img src="/assets/img/apc-logo.jpg" class="logo">
                     </a>
                 </div>
                 <div class="item">
-                    <a href="">
-                        <img src="/assets/img/adc-logo.jpeg" class="logo">
+                    <span class="party-name">Allied Peoples Movement</span>
+                    <a href="javascript:void(0);" onclick="showPresident('APM', 'Allied Peoples Movement')">
+                        <img src="/assets/img/apm-logo.jpeg" class="logo">
                     </a>
                 </div>
                 <div class="item">
-                    <a href="">
+                    <span class="party-name">All Progressives Grand Alliance</span>
+                    <a href="javascript:void(0);" onclick="showPresident('APGA', 'All Progressives Grand Alliance')">
                         <img src="/assets/img/apga-logo.jpg" class="logo">
                     </a>
                 </div>
                 <div class="item">
-                    <a href="">
+                    <span class="party-name">Action Peoples Party</span>
+                    <a href="javascript:void(0);" onclick="showPresident('APP', 'Action Peoples Party')">
+                        <img src="/assets/img/app-logo.png" class="logo">
+                    </a>
+                </div>
+                <div class="item">
+                    <span class="party-name">Boot Party</span>
+                    <a href="javascript:void(0);" onclick="showPresident('BOOT', 'Boot Party')">
+                        <img src="/assets/img/boot-logo.png" class="logo">
+                    </a>
+                </div>
+                <div class="item">
+                    <span class="party-name">Labour Party</span>
+                    <a href="javascript:void(0);" onclick="showPresident('LP', 'Labour Party')">
+                        <img src="/assets/img/lp-logo.jpg" class="logo">
+                    </a>
+                </div>
+                <div class="item">
+                    <span class="party-name">New Nigeria Peoples Party</span>
+                    <a href="javascript:void(0);" onclick="showPresident('NNPP', 'New Nigeria Peoples Party')">
                         <img src="/assets/img/nnpp-logo.jpeg" class="logo">
                     </a>
                 </div>
                 <div class="item">
-                    <a href="">
+                    <span class="party-name">National Rescue Movement</span>
+                    <a href="javascript:void(0);" onclick="showPresident('NRM', 'National Rescue Movement')">
+                        <img src="/assets/img/nrm-logo.jpeg" class="logo">
+                    </a>
+                </div>
+                <div class="item">
+                    <span class="party-name">Peoples Democratic Party</span>
+                    <a href="javascript:void(0);" onclick="showPresident('PDP', Peoples Democratic Party)">
                         <img src="/assets/img/pdp-logo.jpeg" class="logo">
                     </a>
                 </div>
                 <div class="item">
-                    <a href="">
+                    <span class="party-name">Peoples Redemption Party</span>
+                    <a href="javascript:void(0);" onclick="showPresident('PRP', 'Peoples Redemption Party')">
                         <img src="/assets/img/prp-logo.jpeg" class="logo">
                     </a>
                 </div>
                 <div class="item">
-                    <a href="">
+                    <span class="party-name">Social Democratic Party</span>
+                    <a href="javascript:void(0);" onclick="showPresident('SDP', 'Social Democratic Party')">
                         <img src="/assets/img/sdp-logo.jpeg" class="logo">
                     </a>
                 </div>
                 <div class="item">
-                    <a href="">
+                    <span class="party-name">Young Progressive Party</span>
+                    <a href="javascript:void(0);" onclick="showPresident('YPP', 'Young Progressive Party')">
                         <img src="/assets/img/ypp-logo.jpeg" class="logo">
                     </a>
                 </div>
-
+                <div class="item">
+                    <span class="party-name">Zenith Labour Party</span>
+                    <a href="javascript:void(0);" onclick="showPresident('ZLP', 'Zenith Labour Party')">
+                        <img src="/assets/img/zlp-logo.jpg" class="logo">
+                    </a>
+                </div>
             </div>
         </div>
       </div>
@@ -169,7 +239,7 @@
                             </div>
                         </div>
                     </form>
-                    {{-- <div class="row mt-5 pb-4">
+                    <div class="row mt-5 pb-4">
                         <form action="/upload-csv" enctype="multipart/form-data" method="post">
                             @csrf
                             <div class="col-md-6">
@@ -179,7 +249,7 @@
                                 <button type="submit" class="btn btn-primary">Submit <i class="bi bi-filter"></i></button>
                             </div>
                         </form>
-                    </div> --}}
+                    </div>
                 </div>
             </div>
         </div>

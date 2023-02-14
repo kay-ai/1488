@@ -29,11 +29,12 @@
 }
 
 .party-card .item{
-    height: 150px;
-    width: 150px;
+    height: 130px;
+    width: 130px;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 
 .party-card .item .logo{
@@ -57,6 +58,12 @@
 #senate{
     background: url("../img/about-bg.jpg") top right no-repeat;
     background-size: cover;
+}
+
+#main{
+    background: url("../img/page-bg.jpg") top right no-repeat;
+    background-size: cover;
+    background-position: fixed;
 }
 
 .section{
@@ -201,3 +208,76 @@
     }
 }
 
+.alert-dismissible{
+    position: absolute !important;
+    right: -500px;
+    top: 75px;
+    width: max-content !important;
+    transition: all 0.5s ease-in-out;
+}
+
+.alert-dismissible.show{
+    right: 30px;
+}
+
+.loading-icon {
+    display: flex;
+    justify-content: center;
+    padding: 35px;
+  }
+
+  .loading-bar {
+    width: 4px;
+    height: 18px;
+    margin: 0 8px;
+    border-radius: 4px;
+    background: #4154f1;
+    animation: loading 2s ease-in-out infinite;
+  }
+
+  @keyframes loading {
+    0% {
+      transform: scale(1);
+    }
+    20% {
+      transform: scale(1, 2.5);
+    }
+    40% {
+      transform: scale(1);
+    }
+  }
+
+  .loading-bar:nth-child(1) {
+    animation-delay: 0.s;
+  }
+  .loading-bar:nth-child(2) {
+    animation-delay: 0.25s;
+  }
+  .loading-bar:nth-child(3) {
+    animation-delay: 0.5s;
+  }
+  .loading-bar:nth-child(4) {
+    animation-delay: 0.75s;
+  }
+
+  .cr-text{
+    font-size: 13px;
+  }
+
+.party-name{
+    position: absolute;
+    width: max-content;
+    text-align: center;
+    z-index: 2;
+    top: -25px;
+    padding: 2px 10px;
+    border-radius: 20px;
+    background: #0563bb;
+    color: #fff;
+    opacity: 0;
+    transition: all 1s;
+}
+
+.party-card .item:hover .party-name{
+    opacity: 1;
+}

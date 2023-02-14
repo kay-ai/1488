@@ -70,6 +70,14 @@ class CandidateController extends Controller
         return response()->json($candidate);
     }
 
+    public function getPresident(Request $request)
+    {
+        $candidate = Candidate::where('office', 'LIKE', "%president%")
+        ->where('party', $request->party)->get();
+
+        return response()->json($candidate);
+    }
+
     public function showCandidate(Request $request){
         // dd($request->all());
 
