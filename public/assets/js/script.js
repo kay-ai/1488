@@ -104,7 +104,7 @@ function showPresident(party, accnym){
         }
     });
     $.ajax({
-        url: "/get-president/",
+        url: "/get-president",
         type: "POST",
         data: { party: party },
         beforeSend: function(){
