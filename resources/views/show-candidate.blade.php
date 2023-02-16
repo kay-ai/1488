@@ -48,11 +48,11 @@
                                 </div>
                             </div>
 
-                            <div class="d-flex justify-content-between qualifications mb-3">
-                                <span class="badge bg-success">EDUCATION - {{$candidate->educational_check}}</span>
-                                <span class="badge bg-success">AGE - {{$candidate->age_check}}</span>
-                                <span class="badge bg-success">HEALTH - {{$candidate->health_check}}</span>
-                                <span class="badge bg-success">CREDIBILITY - {{$candidate->credibility_check}}</span>
+                            <div class="d-flex justify-content-between qualifications mb-3" style="flex-wrap: wrap;">
+                                <span class="badge my-2 bg-success">EDUCATION - {{$candidate->educational_check}}</span>
+                                <span class="badge my-2 bg-success">AGE - {{$candidate->age_check}}</span>
+                                <span class="badge my-2 bg-success">HEALTH - {{$candidate->health_check}}</span>
+                                <span class="badge my-2 bg-success">CREDIBILITY - {{$candidate->credibility_check}}</span>
                             </div>
                         </div>
                     @endforeach

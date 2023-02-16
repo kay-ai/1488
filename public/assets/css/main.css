@@ -61,7 +61,7 @@
 }
 
 #main{
-    background: url("../img/page-bg.jpg") top right no-repeat;
+    background: url("../img/about-bg.jpg") top right no-repeat;
     background-size: cover;
     background-position: fixed;
 }
@@ -178,6 +178,10 @@
 }
 
 @media screen and (max-width: 768px) {
+    .site-details{
+        top: 1%;
+    }
+
     .card-row{
         margin-right: 0px;
         margin-left: 2px;

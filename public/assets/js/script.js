@@ -69,6 +69,18 @@ $(document).ready(function(){
     getSuggestion('#reps_constituency', 'reps', 'constituency');
     populateFields('reps_constituency');
 
+    getSuggestion('#assembly_name', 'assembly', 'name');
+    populateFields('assembly_name');
+
+    getSuggestion('#assembly_state', 'assembly', 'state');
+    populateFields('assembly_state');
+
+    getSuggestion('#assembly_party', 'assembly', 'party');
+    populateFields('assembly_party');
+
+    getSuggestion('#assembly_constituency', 'assembly', 'constituency');
+    populateFields('assembly_constituency');
+
     // Select the alert element
     const $alert = $('.alert');
 
