@@ -240,7 +240,7 @@
                             </div>
                         </div>
                     </form>
-                    <div class="row mt-2 pb-4">
+                    {{-- <div class="row mt-2 pb-4">
                         <form action="/upload-csv" enctype="multipart/form-data" method="post">
                             @csrf
                             <div class="col-md-6">
@@ -250,7 +250,7 @@
                                 <button type="submit" class="btn btn-primary">Submit <i class="bi bi-filter"></i></button>
                             </div>
                         </form>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>
