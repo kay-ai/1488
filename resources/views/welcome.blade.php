@@ -207,9 +207,9 @@
                 <div class="card shadow mb-5 px-4">
                     <h5 class="card-title"><i class="bi bi-filter"></i> Filter House of Reps list</h5>
                     <small class="mb-4">Search for a House of Reps Candidate, Filter by any of the following parameters; Candidate's Name, State, Political Party, or Contituency.</small>
-                    <form action="{{route('showCandidate')}}" class="mb-2" method="POST">
+                    <form action="{{route('showCandidate')}}" method="POST">
                         @csrf
-                        <div class="row">
+                        <div class="row pb-4">
                             <div class="form-group col-md-3 mb-4">
                                 <label class="control-label" for="name">Candidate Name:</label>
                                 <select id="reps_name" placeholder="hello" class="form-control" style="font-size: 12px;" multiple="multiple" data-tags="true">
@@ -240,7 +240,7 @@
                             </div>
                         </div>
                     </form>
-                    <div class="row mt-2 pb-4">
+                    {{-- <div class="row mt-2 pb-4">
                         <form action="/upload-csv" enctype="multipart/form-data" method="post">
                             @csrf
                             <div class="col-md-6">
@@ -250,7 +250,7 @@
                                 <button type="submit" class="btn btn-primary">Submit <i class="bi bi-filter"></i></button>
                             </div>
                         </form>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>
