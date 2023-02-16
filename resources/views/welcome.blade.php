@@ -9,7 +9,8 @@
       <ul>
         <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Presidential</span></a></li>
         <li><a href="#senate" class="nav-link scrollto"><i class="bx bx-user"></i> <span>Senetorial</span></a></li>
-        <li><a href="#reps" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>House of Reps</span></a></li>
+        <li><a href="#reps" class="nav-link scrollto"><i class="bx bxs-key"></i> <span>House of Reps</span></a></li>
+        <li><a href="#assembly" class="nav-link scrollto"><i class="bx bx-user-circle"></i> <span>House of Assembly</span></a></li>
       </ul>
     </nav>
     <!-- .nav-menu -->

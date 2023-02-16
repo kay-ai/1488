@@ -60,6 +60,11 @@
     background-size: cover;
 }
 
+#assembly{
+    background: url("../img/page-bg.jpg") top right no-repeat;
+    background-size: cover;
+}
+
 #main{
     background: url("../img/about-bg.jpg") top right no-repeat;
     background-size: cover;
